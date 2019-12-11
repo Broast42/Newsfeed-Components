@@ -101,6 +101,24 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Another Component',
+    date: 'Dec 10th, 2019',
+    firstParagraph: `Zombies reversus ab inferno, nam malum cerebro. De carne animata corpora quaeritis. Summus sit​​, morbo vel maleficia? 
+    De Apocalypsi undead dictum mauris. Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium. 
+    Qui offenderit rapto, terribilem incessu. The voodoo sacerdos suscitat mortuos comedere carnem. Search for solum oculi eorum defunctis cerebro. 
+    Nescio an Undead zombies. Sicut malus movie horror.`,
+
+    secondParagraph: `Cum horribilem resurgere de sepulcris creaturis, sicut de iride et serpens. Pestilentia, ipsa screams. 
+    Pestilentia est haec ambulabat mortuos. Sicut malus voodoo. Aenean a dolor vulnerum aperire accedunt, mortui iam vivam. Qui tardius moveri, sed in magna copia sint terribiles legionis. 
+    Alii missing oculis aliorum sicut serpere crabs nostram. Putridi odores aere implent. `,
+
+    thirdParagraph: `Tremor est vivos magna. Expansis ulnis video missing carnem armis caeruleum in locis. 
+    A morbo amarus in auras. Nihil horum sagittis tincidunt, gelida portenta. The unleashed virus est, et iam mortui ambulabunt super terram. 
+    Souless mortuum oculos attonitos back zombies. An hoc incipere Clairvius Narcisse, an ante? Is bello mundi z?
+
+    `
   }
 ];
 
@@ -141,7 +159,7 @@ function createArticle(title, date, par1, par2, par3){
   const para1 = document.createElement("p");
   const para2 = document.createElement("p");
   const para3 = document.createElement("p");
-  const button = document.createElement("span")
+  const button = document.createElement("span");
 
   article.appendChild(arTitle);
   article.appendChild(arDate);
