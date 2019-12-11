@@ -37,6 +37,7 @@ let menuItems = [
 const button = document.querySelector(".menu-button");
 const header = document.querySelector(".header");
 
+
 header.appendChild(createMenu(menuItems));
 
 function createMenu(arr){
@@ -61,19 +62,28 @@ function createMenu(arr){
   button.addEventListener("click", ()=>{
     if(menuDiv.style.animationName === "menuSlide"){
       menuDiv.style.animationName = "menuSlideOut";
-      menuDiv.addEventListener("animationend", ()=>{
-        if(menuDiv.style.display === "block" &&  menuDiv.style.animationName === "menuSlideOut"){
-          menuDiv.style.display = "none";
-        }else{
-          //menuDiv.style.display = "block";
-        } 
-      });
+      
           
     }else{
       menuDiv.style.animationName = "menuSlide";
       menuDiv.style.display = "block";
     }
      
+  });
+
+  menuDiv.addEventListener("animationend", ()=>{
+    if(menuDiv.style.display === "block" &&  menuDiv.style.animationName === "menuSlideOut"){
+      menuDiv.style.display = "none";
+    }
+  });
+
+  window.addEventListener("click", (e)=>{
+    //if( menuDiv.style.animationName === "menuSlide"){
+      if(e.target !== menuDiv && e.target !== button){ 
+        menuDiv.style.animationName = "menuSlideOut";
+      }
+       
+    //}
   });
 
   return menuDiv;
