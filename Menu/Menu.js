@@ -54,10 +54,30 @@ function createMenu(arr){
 
   menuDiv.classList.add("menu");
   
-  button.addEventListener('click', ()=>{
-    menuDiv.classList.toggle("menu--open");
+  // button.addEventListener('click', ()=>{
+  //   menuDiv.classList.toggle("menu--open");
+  // });
+
+  button.addEventListener("click", ()=>{
+    if(menuDiv.style.animationName === "menuSlide"){
+      menuDiv.style.animationName = "menuSlideOut";
+      menuDiv.addEventListener("animationend", ()=>{
+        if(menuDiv.style.display === "block" &&  menuDiv.style.animationName === "menuSlideOut"){
+          menuDiv.style.display = "none";
+        }else{
+          //menuDiv.style.display = "block";
+        } 
+      });
+          
+    }else{
+      menuDiv.style.animationName = "menuSlide";
+      menuDiv.style.display = "block";
+    }
+     
   });
 
   return menuDiv;
 
 }
+
+ 
