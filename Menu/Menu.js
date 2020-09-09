@@ -33,3 +33,61 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+
+const button = document.querySelector(".menu-button");
+const header = document.querySelector(".header");
+
+
+header.appendChild(createMenu(menuItems));
+
+function createMenu(arr){
+  const menuDiv = document.createElement('div');
+  const menuUl = document.createElement('ul');
+  
+  menuDiv.appendChild(menuUl);
+
+  arr.forEach(x=>{
+    const menuLi = document.createElement("li");
+    menuUl.appendChild(menuLi);
+    menuLi.textContent = x;
+
+  });
+
+  menuDiv.classList.add("menu");
+  
+  // button.addEventListener('click', ()=>{
+  //   menuDiv.classList.toggle("menu--open");
+  // });
+
+  button.addEventListener("click", ()=>{
+    if(menuDiv.style.animationName === "menuSlide"){
+      menuDiv.style.animationName = "menuSlideOut";
+      
+          
+    }else{
+      menuDiv.style.animationName = "menuSlide";
+      menuDiv.style.display = "block";
+    }
+     
+  });
+
+  menuDiv.addEventListener("animationend", ()=>{
+    if(menuDiv.style.display === "block" &&  menuDiv.style.animationName === "menuSlideOut"){
+      menuDiv.style.display = "none";
+    }
+  });
+
+  window.addEventListener("click", (e)=>{
+    //if( menuDiv.style.animationName === "menuSlide"){
+      if(e.target !== menuDiv && e.target !== button){ 
+        menuDiv.style.animationName = "menuSlideOut";
+      }
+       
+    //}
+  });
+
+  return menuDiv;
+
+}
+
+ 
